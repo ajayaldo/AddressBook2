@@ -12,12 +12,12 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class AddressBook
+    public partial class address_book
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public System.DateTime Date_Of_Birth { get; set; }
-        public int Contact { get; set; }
-        public bool In_The_Country { get; set; }
+        public long id { get; set; }
+        public string name { get; set; }
+        public long contact { get; set; }
+        public System.DateTime date_of_birth { get; set; }
+        public bool in_the_country { get; set; }
     }
 }

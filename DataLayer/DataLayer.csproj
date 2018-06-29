@@ -55,35 +55,35 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddressBook.cs">
-      <DependentUpon>AddressBooksDbContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AddressBooksDbContext.Context.cs">
+    <Compile Include="AddressBookContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AddressBooksDbContext.Context.tt</DependentUpon>
+      <DependentUpon>AddressBookContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="AddressBooksDbContext.cs">
+    <Compile Include="AddressBookContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AddressBooksDbContext.tt</DependentUpon>
+      <DependentUpon>AddressBookContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="AddressBooksDbContext.Designer.cs">
+    <Compile Include="AddressBookContext.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AddressBooksDbContext.edmx</DependentUpon>
+      <DependentUpon>AddressBookContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="address_book.cs">
+      <DependentUpon>AddressBookContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AddressBookRepository.cs" />
     <Compile Include="Repository\IAddressBookRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="AddressBooksDbContext.edmx">
+    <EntityDeploy Include="AddressBookContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AddressBooksDbContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>AddressBookContext.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="AddressBooksDbContext.edmx.diagram">
-      <DependentUpon>AddressBooksDbContext.edmx</DependentUpon>
+    <None Include="AddressBookContext.edmx.diagram">
+      <DependentUpon>AddressBookContext.edmx</DependentUpon>
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -92,15 +92,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddressBooksDbContext.Context.tt">
+    <Content Include="AddressBookContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AddressBooksDbContext.edmx</DependentUpon>
-      <LastGenOutput>AddressBooksDbContext.Context.cs</LastGenOutput>
+      <DependentUpon>AddressBookContext.edmx</DependentUpon>
+      <LastGenOutput>AddressBookContext.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="AddressBooksDbContext.tt">
+    <Content Include="AddressBookContext.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AddressBooksDbContext.edmx</DependentUpon>
-      <LastGenOutput>AddressBooksDbContext.cs</LastGenOutput>
+      <DependentUpon>AddressBookContext.edmx</DependentUpon>
+      <LastGenOutput>AddressBookContext.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

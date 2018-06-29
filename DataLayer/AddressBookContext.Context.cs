@@ -13,10 +13,10 @@ namespace DataLayer
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AddressBookDBEntities : DbContext
+    public partial class AddressBookDbEntities : DbContext
     {
-        public AddressBookDBEntities()
-            : base("name=AddressBookDBEntities")
+        public AddressBookDbEntities()
+            : base("name=AddressBookDbEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace DataLayer
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AddressBook> AddressBooks { get; set; }
+        public virtual DbSet<address_book> address_book { get; set; }
     }
 }

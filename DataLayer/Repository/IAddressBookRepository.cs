@@ -4,7 +4,8 @@ namespace DataLayer.Repository
 {
   public interface IAddressBookRepository
   {
-    void AddAddress(AddressBook addressBook);
-    IEnumerable<AddressBook> GetAllAddresses();
+    void AddAddress(address_book addressBook);
+    IEnumerable<address_book> GetAllAddresses();
+    void UpdateAddress(address_book entity);
   }
 }

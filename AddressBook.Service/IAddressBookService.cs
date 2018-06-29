@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
+using AddressBook.Common.Models;
 
 namespace AddressBookService
 {
@@ -7,9 +8,12 @@ namespace AddressBookService
   public interface IAddressBookService
   {
     [OperationContract]
-    IEnumerable<AddressBook.Common.Models.AddressBookModel> GetAllAddresses();
+    IEnumerable<AddressBookModel> GetAllAddresses();
 
     [OperationContract]
-    void AddAddress(AddressBook.Common.Models.AddressBookModel addressBook);
+    void AddAddress(AddressBookModel addressBook);
+
+    [OperationContract]
+    void UpdateAddress(AddressBookModel addressBook);
   }
 }

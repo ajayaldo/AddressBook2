@@ -16,11 +16,11 @@ namespace AddressBookService
 
     public void AddAddress(AddressBookModel addressBook)
     {
-      var addressBookEntity = new DataLayer.AddressBook
+      var addressBookEntity = new DataLayer.address_book
       {
-        Contact = addressBook.Contact,
-               In_The_Country = addressBook.InTheCountry,
-        Name = addressBook.Name
+        contact = addressBook.Contact,
+        in_the_country = addressBook.InTheCountry,
+        name = addressBook.Name
       };
 
       _repository.AddAddress(addressBookEntity);
@@ -28,22 +28,28 @@ namespace AddressBookService
 
     public void UpdateAddress(AddressBookModel addressBook)
     {
-      var addressBook = new DataLayer.AddressBook
+      var addressBookEntity = new DataLayer.address_book
       {
-
-      }
+        contact = addressBook.Contact,
+        in_the_country = addressBook.InTheCountry,
+        name = addressBook.Name,
+        id = addressBook.Id,
+        date_of_birth = addressBook.DateOfBirth
+      };
+      // _repository.UpdateAddress()
     }
 
     public IEnumerable<AddressBookModel> GetAllAddresses()
     {
       return _repository
         .GetAllAddresses()
-        .Select(ab => new AddressBook.Common.Models.AddressBookModel
+        .Select(ab => new AddressBookModel
         {
-          Contact = ab.Contact,
-          DateOfBirth = ab.Date_Of_Birth,
-          InTheCountry = ab.In_The_Country,
-          Name = ab.Name
+          Id = ab.id,
+          Contact = ab.contact,
+          DateOfBirth = ab.date_of_birth,
+          InTheCountry = ab.in_the_country,
+          Name = ab.name
         });
     }
   }

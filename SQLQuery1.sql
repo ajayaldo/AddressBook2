@@ -1,0 +1,1 @@
+﻿alter table address_book alter column date_of_birth datetime2

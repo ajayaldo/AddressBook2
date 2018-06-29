@@ -6,35 +6,38 @@ namespace DataLayer.Repository
   public sealed class AddressBookRepository
     : IAddressBookRepository
   {
-    private AddressBookDBEntities _context;
+    private AddressBookDbEntities _context;
     public AddressBookRepository()
     {
-      _context = new AddressBookDBEntities();
+      _context = new AddressBookDbEntities();
     }
 
-    public void AddAddress(AddressBook entity)
+    public void AddAddress(address_book entity)
     {
-      _context.AddressBooks.Add(entity);
-      _context.SaveChanges();
+      using (_context)
+      {
+        _context.address_book.Add(entity);
+        _context.SaveChanges();
+      }
     }
 
-    public void UpdateAddress(AddressBook entity)
+    public void UpdateAddress(address_book entity)
     {
-      var addressBook = _context.AddressBooks.SingleOrDefault(a => a.Id == entity.Id);
+      var addressBook = _context.address_book.SingleOrDefault(a => a.id == entity.id);
       if (addressBook != null)
       {
-        addressBook.Contact = entity.Contact;
-        addressBook.Date_Of_Birth = entity.Date_Of_Birth;
-        entity.In_The_Country = entity.In_The_Country;
-        entity.Name = entity.Name;
+        addressBook.contact = entity.contact;
+        addressBook.date_of_birth = entity.date_of_birth;
+        entity.in_the_country = entity.in_the_country;
+        entity.name = entity.name;
 
         _context.SaveChanges();
       }
     }
 
-    public IEnumerable<AddressBook> GetAllAddresses()
+    public IEnumerable<address_book> GetAllAddresses()
     {
-      return _context.AddressBooks.ToList();
+      return _context.address_book.ToList();
     }
   }
 }
