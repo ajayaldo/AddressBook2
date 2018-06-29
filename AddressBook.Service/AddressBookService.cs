@@ -20,7 +20,8 @@ namespace AddressBookService
       {
         contact = addressBook.Contact,
         in_the_country = addressBook.InTheCountry,
-        name = addressBook.Name
+        name = addressBook.Name,
+        date_of_birth = addressBook.DateOfBirth
       };
 
       _repository.AddAddress(addressBookEntity);
@@ -36,7 +37,8 @@ namespace AddressBookService
         id = addressBook.Id,
         date_of_birth = addressBook.DateOfBirth
       };
-      // _repository.UpdateAddress()
+
+      _repository.UpdateAddress(addressBookEntity);
     }
 
     public IEnumerable<AddressBookModel> GetAllAddresses()

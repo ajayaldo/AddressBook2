@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bef4379f-58e3-478e-a560-63d9de3db421" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ca429810-fb2c-4ed9-a71a-baa0e200ac9c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/AddressBook.Service/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="0e0441ba-8ae9-4b2d-bcfa-da034d685c7a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/AddressBook.Service/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="65e497e3-a528-430d-bd56-a905ea6679c6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/AddressBook.Service/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="3919ffce-e0bb-4a8c-9ddf-41ac17bdf0e9" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/AddressBook.Service/mex" />
-    <MetadataFile FileName="AddressBook.Common.Models.xsd" MetadataType="Schema" ID="0b835ea1-90b5-4785-9709-87b05886f320" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/AddressBook.Service/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="89e4b44c-8763-4fa8-9a4d-0f390e7f0465" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/AddressBook.Service/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="9ad7c170-3dd9-4d8a-ad3a-b9ba525af42e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/AddressBook.Service/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="33c04c0c-26c7-49ae-8d10-a4bdb44a9b2e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/AddressBook.Service/mex" />
+    <MetadataFile FileName="AddressBook.Common.Models.xsd" MetadataType="Schema" ID="4193b4cb-647a-478e-9f4e-b9c848d259f6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/AddressBook.Service/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

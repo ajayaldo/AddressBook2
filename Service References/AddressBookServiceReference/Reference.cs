@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AddressBook.ServiceReference2 {
+namespace AddressBook.AddressBookServiceReference {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference2.IAddressBookService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AddressBookServiceReference.IAddressBookService")]
     public interface IAddressBookService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddressBookService/GetAllAddresses", ReplyAction="http://tempuri.org/IAddressBookService/GetAllAddressesResponse")]
@@ -35,12 +35,12 @@ namespace AddressBook.ServiceReference2 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAddressBookServiceChannel : AddressBook.ServiceReference2.IAddressBookService, System.ServiceModel.IClientChannel {
+    public interface IAddressBookServiceChannel : AddressBook.AddressBookServiceReference.IAddressBookService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddressBookServiceClient : System.ServiceModel.ClientBase<AddressBook.ServiceReference2.IAddressBookService>, AddressBook.ServiceReference2.IAddressBookService {
+    public partial class AddressBookServiceClient : System.ServiceModel.ClientBase<AddressBook.AddressBookServiceReference.IAddressBookService>, AddressBook.AddressBookServiceReference.IAddressBookService {
         
         public AddressBookServiceClient() {
         }

@@ -11,7 +11,7 @@
     <DataGrid AutoGenerateColumns="False" 
               ItemsSource="{Binding}" 
               x:Name="dgAB" HorizontalAlignment="Left" Margin="10,53,0,0" 
-              VerticalAlignment="Top" Height="240" Width="497" 
+              VerticalAlignment="Top" Height="186" Width="497" 
               RowEditEnding="dgAB_RowEditEnding">
       <DataGrid.Columns>
         <DataGridTextColumn Binding="{Binding ID, Mode=TwoWay}" Header="ID" Visibility="Hidden"/>
