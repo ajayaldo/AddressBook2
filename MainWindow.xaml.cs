@@ -1,30 +1,46 @@
 ﻿using System.Windows;
-using System.Threading.Tasks;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Windows.Controls;
+using AddressBook.Common.Models;
 
 namespace AddressBook
 {
-  /// <summary>
-  /// Interaction logic for MainWindow.xaml
-  /// </summary>
   public partial class MainWindow : Window
   {
-
     public MainWindow()
     {
       InitializeComponent();
     }
-    private void Add_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+
+    private void Window_Loaded(object sender, RoutedEventArgs e)
     {
-      var proxy = new ServiceReference1.AddressBookServiceClient();
-      var addressBook = new Common.Models.AddressBookModel()
+      PopulateGrid();
+    }
+
+    private void PopulateGrid()
+    {
+      var list = new List<AddressBookModel>();
+      var addressBook = new AddressBookModel()
       {
-        Contact = 121211111,
+        Id = 2242442424,
+        Contact = 999999999,
         DateOfBirth = DateTime.Now.AddYears(-10),
-        In_The_Country = true,
+        InTheCountry = true,
         Name = "Eman"
       };
-      proxy.AddAddress(addressBook);
+
+      list.Add(addressBook);
+
+      var obs = new ObservableCollection<AddressBookModel>(list);
+      dgAB.ItemsSource = list;
+    }
+
+    private void dgAB_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+    {
+      var dataContext = e.Row.DataContext as AddressBookModel;
+      var f = dataContext;
     }
   }
 }

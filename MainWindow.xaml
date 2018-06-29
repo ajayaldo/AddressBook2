@@ -7,8 +7,19 @@
         mc:Ignorable="d"
         Title="Address Book" Height="350" Width="525">
   <Grid>
-    <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" MouseDoubleClick="Add_MouseDoubleClick" />
-    <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="69,134,0,0" VerticalAlignment="Top" >
+    <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" />
+    <DataGrid AutoGenerateColumns="False" 
+              ItemsSource="{Binding}" 
+              x:Name="dgAB" HorizontalAlignment="Left" Margin="10,53,0,0" 
+              VerticalAlignment="Top" Height="240" Width="497" 
+              RowEditEnding="dgAB_RowEditEnding">
+      <DataGrid.Columns>
+        <DataGridTextColumn Binding="{Binding ID, Mode=TwoWay}" Header="ID" Visibility="Hidden"/>
+        <DataGridTextColumn Binding="{Binding Name, NotifyOnTargetUpdated=True, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="Name"/>
+        <DataGridTextColumn Binding="{Binding DateOfBirth, NotifyOnTargetUpdated=True, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Header="DOB"/>
+        <DataGridTextColumn Binding="{Binding Contact, NotifyOnTargetUpdated=True, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="Contact"/>
+        <DataGridCheckBoxColumn Binding="{Binding InTheCountry, NotifyOnTargetUpdated=True, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Header="In The Country"/>
+      </DataGrid.Columns>
     </DataGrid>
   </Grid>
 </Window>

@@ -1,6 +1,6 @@
 ﻿using DataLayer.Repository;
 using System.Collections.Generic;
-using DataLayer;
+using AddressBook.Common.Models;
 using System.Linq;
 
 namespace AddressBookService
@@ -14,19 +14,27 @@ namespace AddressBookService
       _repository = new AddressBookRepository();
     }
 
-    public void AddAddress(AddressBook.Common.Models.AddressBookModel addressBook)
+    public void AddAddress(AddressBookModel addressBook)
     {
       var addressBookEntity = new DataLayer.AddressBook
       {
         Contact = addressBook.Contact,
-               In_The_Country = addressBook.In_The_Country,
+               In_The_Country = addressBook.InTheCountry,
         Name = addressBook.Name
       };
 
       _repository.AddAddress(addressBookEntity);
     }
 
-    public IEnumerable<AddressBook.Common.Models.AddressBookModel> GetAllAddresses()
+    public void UpdateAddress(AddressBookModel addressBook)
+    {
+      var addressBook = new DataLayer.AddressBook
+      {
+
+      }
+    }
+
+    public IEnumerable<AddressBookModel> GetAllAddresses()
     {
       return _repository
         .GetAllAddresses()
@@ -34,7 +42,7 @@ namespace AddressBookService
         {
           Contact = ab.Contact,
           DateOfBirth = ab.Date_Of_Birth,
-          In_The_Country = ab.In_The_Country,
+          InTheCountry = ab.In_The_Country,
           Name = ab.Name
         });
     }
