@@ -132,7 +132,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="AddressBook.Common\AddressBook.Common.csproj">
+    <ProjectReference Include="..\AddressBook.Common\AddressBook.Common.csproj">
       <Project>{a489c37f-e3ad-4b5e-abd2-971e1b6d3f3c}</Project>
       <Name>AddressBook.Common</Name>
     </ProjectReference>
