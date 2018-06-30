@@ -3,7 +3,8 @@ using System;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using AddressBook.Common.Models;
-using AddressBook.AddressBookServiceReference;
+using AddressBook.AddressBookService;
+using System.ServiceModel;
 
 namespace AddressBook
 {
@@ -14,8 +15,6 @@ namespace AddressBook
     public MainWindow()
     {
       InitializeComponent();
-      _serviceReference = new AddressBookServiceClient();
-      PopulateGrid();
     }
 
     private void PopulateGrid()
@@ -28,8 +27,7 @@ namespace AddressBook
     private void dgAB_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
     {
       var dataContext = e.Row.DataContext as AddressBookModel;
-      var f = dataContext;
-      _serviceReference.UpdateAddress(f);
+      _serviceReference.UpdateAddress(dataContext);
     }
 
     private void Add_Click(object sender, RoutedEventArgs e)
@@ -43,6 +41,14 @@ namespace AddressBook
       };
 
       _serviceReference.AddAddress(addressBook);
+
+      PopulateGrid();
+      MessageBox.Show("Added successfully", "Alert", MessageBoxButton.OK, MessageBoxImage.Information);
+    }
+
+    private void Window_Loaded(object sender, RoutedEventArgs e)
+    {
+      _serviceReference = new AddressBookServiceClient();
       PopulateGrid();
     }
   }

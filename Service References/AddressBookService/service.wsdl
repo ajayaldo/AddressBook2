@@ -71,7 +71,7 @@
   </wsdl:binding>
   <wsdl:service name="AddressBookService">
     <wsdl:port name="BasicHttpBinding_IAddressBookService" binding="tns:BasicHttpBinding_IAddressBookService">
-      <soap:address location="http://localhost:8733/Design_Time_Addresses/AddressBook.Service/" />
+      <soap:address location="http://localhost:8733/service/AddressBook.Service/" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

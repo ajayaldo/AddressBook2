@@ -8,30 +8,39 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AddressBook.AddressBookServiceReference {
+namespace AddressBook.AddressBookService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AddressBookServiceReference.IAddressBookService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AddressBookService.IAddressBookService")]
     public interface IAddressBookService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddressBookService/GetAllAddresses", ReplyAction="http://tempuri.org/IAddressBookService/GetAllAddressesResponse")]
         AddressBook.Common.Models.AddressBookModel[] GetAllAddresses();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddressBookService/GetAllAddresses", ReplyAction="http://tempuri.org/IAddressBookService/GetAllAddressesResponse")]
+        System.Threading.Tasks.Task<AddressBook.Common.Models.AddressBookModel[]> GetAllAddressesAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddressBookService/AddAddress", ReplyAction="http://tempuri.org/IAddressBookService/AddAddressResponse")]
         void AddAddress(AddressBook.Common.Models.AddressBookModel addressBook);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddressBookService/AddAddress", ReplyAction="http://tempuri.org/IAddressBookService/AddAddressResponse")]
+        System.Threading.Tasks.Task AddAddressAsync(AddressBook.Common.Models.AddressBookModel addressBook);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddressBookService/UpdateAddress", ReplyAction="http://tempuri.org/IAddressBookService/UpdateAddressResponse")]
         void UpdateAddress(AddressBook.Common.Models.AddressBookModel addressBook);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAddressBookService/UpdateAddress", ReplyAction="http://tempuri.org/IAddressBookService/UpdateAddressResponse")]
+        System.Threading.Tasks.Task UpdateAddressAsync(AddressBook.Common.Models.AddressBookModel addressBook);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAddressBookServiceChannel : AddressBook.AddressBookServiceReference.IAddressBookService, System.ServiceModel.IClientChannel {
+    public interface IAddressBookServiceChannel : AddressBook.AddressBookService.IAddressBookService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddressBookServiceClient : System.ServiceModel.ClientBase<AddressBook.AddressBookServiceReference.IAddressBookService>, AddressBook.AddressBookServiceReference.IAddressBookService {
+    public partial class AddressBookServiceClient : System.ServiceModel.ClientBase<AddressBook.AddressBookService.IAddressBookService>, AddressBook.AddressBookService.IAddressBookService {
         
         public AddressBookServiceClient() {
         }
@@ -56,12 +65,24 @@ namespace AddressBook.AddressBookServiceReference {
             return base.Channel.GetAllAddresses();
         }
         
+        public System.Threading.Tasks.Task<AddressBook.Common.Models.AddressBookModel[]> GetAllAddressesAsync() {
+            return base.Channel.GetAllAddressesAsync();
+        }
+        
         public void AddAddress(AddressBook.Common.Models.AddressBookModel addressBook) {
             base.Channel.AddAddress(addressBook);
         }
         
+        public System.Threading.Tasks.Task AddAddressAsync(AddressBook.Common.Models.AddressBookModel addressBook) {
+            return base.Channel.AddAddressAsync(addressBook);
+        }
+        
         public void UpdateAddress(AddressBook.Common.Models.AddressBookModel addressBook) {
             base.Channel.UpdateAddress(addressBook);
+        }
+        
+        public System.Threading.Tasks.Task UpdateAddressAsync(AddressBook.Common.Models.AddressBookModel addressBook) {
+            return base.Channel.UpdateAddressAsync(addressBook);
         }
     }
 }

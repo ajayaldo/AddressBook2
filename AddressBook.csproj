@@ -65,7 +65,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Service References\AddressBookServiceReference\Reference.cs">
+    <Compile Include="Service References\AddressBookService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -112,14 +112,14 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Service References\AddressBookServiceReference\AddressBook.Common.Models.xsd">
+    <None Include="Service References\AddressBookService\AddressBook.Common.Models.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AddressBookServiceReference\service.wsdl" />
-    <None Include="Service References\AddressBookServiceReference\service.xsd">
+    <None Include="Service References\AddressBookService\service.wsdl" />
+    <None Include="Service References\AddressBookService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AddressBookServiceReference\service1.xsd">
+    <None Include="Service References\AddressBookService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -136,18 +136,22 @@
       <Project>{a489c37f-e3ad-4b5e-abd2-971e1b6d3f3c}</Project>
       <Name>AddressBook.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AddressBook.Service\AddressBook.Service.csproj">
+      <Project>{B4D7B5D1-565D-4D26-80BC-2EC1B92C97D3}</Project>
+      <Name>AddressBook.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\AddressBookServiceReference\" />
+    <WCFMetadataStorage Include="Service References\AddressBookService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AddressBookServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\AddressBookService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AddressBookServiceReference\configuration.svcinfo" />
+    <None Include="Service References\AddressBookService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\AddressBookServiceReference\Reference.svcmap">
+    <None Include="Service References\AddressBookService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
