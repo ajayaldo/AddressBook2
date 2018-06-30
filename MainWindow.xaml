@@ -5,14 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AddressBook"
         mc:Ignorable="d"
-        Title="Address Book" Height="350" Width="525">
+        Title="Address Book" Height="350" Width="550">
   <Grid>
-    <Button x:Name="Add" Content="Add" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" />
-    <DataGrid AutoGenerateColumns="False" 
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="227*"/>
+      <ColumnDefinition Width="290*"/>
+    </Grid.ColumnDefinitions>
+    <Button  x:Name="Add" Background="Bisque" Content="Add" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" Width="75" Click="Add_Click" />
+    <DataGrid AlternationCount="2" 
+              ColumnWidth="*"
+              AlternatingRowBackground="Bisque" 
+              AutoGenerateColumns="False" 
+              CanUserAddRows="False"
               ItemsSource="{Binding}" 
-              x:Name="dgAB" HorizontalAlignment="Left" Margin="10,53,0,0" 
-              VerticalAlignment="Top" Height="186" Width="497" 
-              RowEditEnding="dgAB_RowEditEnding">
+              x:Name="dgAB" 
+              HorizontalAlignment="Stretch"
+              Margin="15,53,5,5" 
+              VerticalAlignment="Top"
+              Height="250" Width="500" 
+              RowEditEnding="dgAB_RowEditEnding" 
+              HorizontalContentAlignment="Stretch" 
+              Grid.ColumnSpan="2">
       <DataGrid.Columns>
         <DataGridTextColumn Binding="{Binding ID, Mode=TwoWay}" Header="ID" Visibility="Hidden"/>
         <DataGridTextColumn Binding="{Binding Name, NotifyOnTargetUpdated=True, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="Name"/>
